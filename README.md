@@ -23,7 +23,7 @@ The input data consists of two datasets which are described as follows:
         "song_id": "SOMZWCG12A8C13C480", "title": "I Didn't Mean To", "duration": 218.93179, "year": 0}
 ```
 
-    * see **/data/song_data**
+* see **/data/song_data**
 2. Logs of user activity on a purported music streaming application. The data is actually generated using an event generatory. This data captures user activity on the app and stores metadata such as artist name, authentication status, first name,length ,time , ect. A sample of the log data is shown below:
 ```javascript
 {"artist":"N.E.R.D. FEATURING MALICE","auth":"Logged In",
@@ -33,7 +33,7 @@ The input data consists of two datasets which are described as follows:
             "status":200,"ts":1541121934796,"userAgent":"\"Mozilla\/5.0 (Windows NT 6.3; WOW64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/36.0.1985.143 Safari\/537.36\"","userId":"101"}
 ```
 
-    * see `/data/log_data`
+* see **/data/log_data**
 
 ### Datawarehouse Design
 #### Fact Tables
