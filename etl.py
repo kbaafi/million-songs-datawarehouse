@@ -5,12 +5,14 @@ import pandas as pd
 from sql_queries import *
 
 
-"""process_song_file:
+
+def process_song_file(cur, filepath):
+	"""
+	process_song_file:
 
     Performs ETL on song data from the million song dataset. 
     This populates the songs and artists tables in the datawarehouse
-"""
-def process_song_file(cur, filepath):
+	"""
     # open song file
     df = pd.read_json(filepath,lines=True)
 
@@ -26,13 +28,15 @@ def process_song_file(cur, filepath):
     cur.execute(artist_table_insert, artist_data)
 
     
-"""process_log_file:
 
-    Performs ETL on log data from the user activity logs. 
-    This populates the time and users and songplays tables in the datawarehouse
-"""
 def process_log_file(cur, filepath):
-        # open log file
+	"""
+	process_log_file:
+
+		Performs ETL on log data from the user activity logs. 
+		This populates the time and users and songplays tables in the datawarehouse
+	"""
+    # open log file
     df = pd.read_json(filepath,lines=True)
 
     # filter by NextSong action
@@ -81,11 +85,13 @@ def process_log_file(cur, filepath):
         cur.execute(songplay_table_insert, songplay_data)
 
         
-"""process_data:
 
-    Performs ETL process to populate datawarehouse
-"""
 def process_data(cur, conn, filepath, func):
+	"""
+	process_data:
+
+    	Performs ETL process to populate datawarehouse
+	"""
     # get all files matching extension from directory
     all_files = []
     for root, dirs, files in os.walk(filepath):
